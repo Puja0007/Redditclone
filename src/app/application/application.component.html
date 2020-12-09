@@ -1,0 +1,10 @@
+<form>
+    <label>Add a tiitle</label>
+    <input type="text" name="title" id="title" #title>
+    <label>Addn a link</label>
+    <input type="text" name="link" id="link" #link>
+    <button (click)="submit(title,link)">Click to submit</button>
+</form>
+<div>
+    <app-article [link]="newLink"></app-article>
+</div>
