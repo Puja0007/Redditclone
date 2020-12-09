@@ -6,20 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent implements OnInit {
-   newTitle:string;
-   newLink:string;
+   data=[];
+   
   constructor() { }
 
   ngOnInit(): void {
   }
    submit(title:HTMLInputElement,link:HTMLInputElement):boolean
    {
-    //  console.log(title.value);
-    //  console.log(link.value);
-     this.newTitle=title.value;
-     this.newLink=link.value;
-     console.log(`Adding article title: ${title.value} and link: ${link.value}`);
-     return false
+    
+     this.data.push({
+       _id: Math.random(),
+      newTitle:title.value,
+      newLink:link.value,
+      votes:0
+     });
+     return false;
+
+    //  console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+    //  return false
      
    }
 }

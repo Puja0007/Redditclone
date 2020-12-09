@@ -1,9 +1,17 @@
 <div>
-<label>Title</label>
-<div></div>
-<label>Link</label>
-<ng-container *ngFor="let art of article;">
-    <div>{{art}}</div>
-</ng-container>
+<!-- <ng-container *ngFor="let ttl of title"> -->
+<div>
+    <ng-container *ngFor="let ar of arr; index as i;">
+        <label>Title</label>
+        <div>{{arr[i].newTitle}}</div>
+        <label>Link</label>
+            <div>{{arr[i].newLink}}</div>
+        <button (click)="up(arr[i]._id)">UPVOTE</button>
+        <button (click)="down(arr[i]._id)">DOWNVOTE</button>
+        <label>Points</label>
+        <div>{{arr[i].votes}}</div>
+    </ng-container>
 
+</div>
+<!-- </ng-container> -->
 </div>
